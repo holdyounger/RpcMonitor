@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="RpcCore">
+      <UniqueIdentifier>{4aa664f8-1d8d-40a8-964f-93d085daec2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RpcCommon">
+      <UniqueIdentifier>{bd1aadde-8983-46df-ad9f-8c532f6df9e6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RpcMonitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RpcCore\RpcCore.c">
+      <Filter>RpcCore</Filter>
+    </ClCompile>
+    <ClCompile Include="RpcCommon\Misc.c">
+      <Filter>RpcCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="RpcCommon\ntdll.c">
+      <Filter>RpcCommon</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RpcCore\RpcCore.h">
+      <Filter>RpcCore</Filter>
+    </ClInclude>
+    <ClInclude Include="RpcCore\RpcInternalsCommon.h">
+      <Filter>RpcCore</Filter>
+    </ClInclude>
+    <ClInclude Include="RpcCommon\Misc.h">
+      <Filter>RpcCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="RpcCommon\ntdll.h">
+      <Filter>RpcCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="RpcCommon\RpcCommon.h">
+      <Filter>RpcCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="RpcCommon\RpcView.h">
+      <Filter>RpcCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="RpcCore\RpcInternals.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
