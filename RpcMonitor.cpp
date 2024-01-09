@@ -14,6 +14,16 @@ extern "C" {
 }
 #endif
 
+typedef struct _EnumCtxt_T {
+    void* pRpcCoreCtxt;
+    RpcCore_T* pRpcCore;
+}EnumCtxt_T;
+
+static BOOL __fastcall EnumInterfaces(RpcInterfaceInfo_T* pRpcInterfaceInfo, EnumCtxt_T* pEnumCtxt, BOOL* pbContinue)
+{
+    return TRUE;
+}
+
 int main()
 {
     /*
@@ -25,7 +35,14 @@ int main()
     // DWORD Ppid = 22112;
     DWORD Ppid = 0;
     ULONG ProcessInfoMask = RPC_PROCESS_INFO_ALL;
-    RpcCoreHelper.RpcCoreGetProcessInfoFn(pRpcCoreCtxt, Pid, Ppid, ProcessInfoMask);
+    RpcProcessInfo_T* pRpcProcessInfo;
+    EnumCtxt_T				EnumCtxt = { 0 };
+    EnumCtxt.pRpcCore = &RpcCoreHelper;
+    EnumCtxt.pRpcCoreCtxt = RpcCoreHelper.RpcCoreInitFn(FALSE);
+    pRpcProcessInfo = RpcCoreHelper.RpcCoreGetProcessInfoFn(pRpcCoreCtxt, Pid, Ppid, ProcessInfoMask);
+    RpcCoreHelper.RpcCoreFreeProcessInfoFn(pRpcCoreCtxt, pRpcProcessInfo);
+    RpcCoreHelper.RpcCoreEnumProcessInterfacesFn(pRpcCoreCtxt, Pid, (RpcCoreEnumProcessInterfacesCallbackFn_T)&EnumInterfaces, &EnumCtxt, RPC_INTERFACE_INFO_ALL);
+
 
     std::cout << "Hello World!\n";
 

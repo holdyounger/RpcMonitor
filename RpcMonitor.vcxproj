@@ -24,6 +24,7 @@
     <ProjectGuid>{adebbaf0-b442-492d-bb7f-6d47f63cc958}</ProjectGuid>
     <RootNamespace>RpcMonitor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <ProjectName>RpcMonitor</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
